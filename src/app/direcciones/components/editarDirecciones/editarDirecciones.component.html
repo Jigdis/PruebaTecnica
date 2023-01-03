@@ -1,3 +1,89 @@
-<p>
-  editarDirecciones works!
-</p>
+<h1 mat-dialog-title>{{tituloDialog}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formulario">
+    <div class="container">
+      <div class="row">
+
+        <!--Alias-->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="full-width-field">
+            <mat-label>Alias</mat-label>
+            <input formControlName="alias" matInput>
+            <mat-error *ngIf="myError('alias', 'required')">Alias es requerido</mat-error>
+            <mat-error *ngIf="myError('alias', 'maxlength')">Liminte excedido</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!--Calle y Número-->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="full-width-field">
+            <mat-label>Calle y Número</mat-label>
+            <input formControlName="calleNumero" matInput>
+            <mat-error *ngIf="myError('calleNumero', 'required')">Calle y número es requerido</mat-error>
+            <mat-error *ngIf="myError('calleNumero', 'maxlength')">Liminte excedido</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!--Colonia-->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="full-width-field">
+            <mat-label>Colonia</mat-label>
+            <input formControlName="colonia" matInput>
+            <mat-error *ngIf="myError('colonia', 'required')">Colonia es requerido</mat-error>
+            <mat-error *ngIf="myError('colonia', 'maxlength')">Liminte excedido</mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <!--CodigoPostal-->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="full-width-field">
+            <mat-label>CodigoPostal</mat-label>
+            <input formControlName="codigoPostal" matInput type="number">
+            <mat-error *ngIf="myError('codigoPostal', 'required')">Código postal es requerido</mat-error>
+            <mat-error *ngIf="myError('codigoPostal', 'maxlength')">Liminte excedido</mat-error>
+            <mat-error *ngIf="myError('codigoPostal', 'min')">Mínimo 5 dígitos</mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <!--Ciudad-->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="full-width-field">
+            <mat-label>Ciudad</mat-label>
+            <input formControlName="ciudad" matInput>
+            <mat-error *ngIf="myError('ciudad', 'required')">Ciudad es requerido</mat-error>
+            <mat-error *ngIf="myError('ciudad', 'maxlength')">Liminte excedido</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!--Estado-->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="full-width-field">
+            <mat-label>Estado</mat-label>
+            <input formControlName="estado" matInput>
+            <mat-error *ngIf="myError('estado', 'required')">Estado es requeridop</mat-error>
+            <mat-error *ngIf="myError('estado', 'maxlength')">Liminte excedido</mat-error>
+          </mat-form-field>
+        </div>
+
+        <!--Pais-->
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="full-width-field">
+            <mat-label>Pais</mat-label>
+            <input formControlName="pais" matInput>
+            <mat-error *ngIf="myError('pais', 'required')">País es requerido</mat-error>
+            <mat-error *ngIf="myError('pais', 'maxlength')">Liminte excedido</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cerrar()">Cerrar</button>
+  <button mat-button mat-raised-button color="primary" (click)="actualizar()" [disabled]="formulario.invalid">{{textoBoton}}</button>
+</div>
