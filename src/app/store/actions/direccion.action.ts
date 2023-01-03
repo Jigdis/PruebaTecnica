@@ -1,5 +1,6 @@
 import { Action, createAction, props } from '@ngrx/store';
 import { Direccion } from 'src/app/direcciones/interfaces/direccion.interface';
+import { Response } from 'src/app/direcciones/interfaces/response.interface';
 
 /** LOAD DIRECCION */
 export const LoadDireccion = createAction(
@@ -8,7 +9,7 @@ export const LoadDireccion = createAction(
 
 export const LoadDireccionSucess = createAction(
     '[Direccion] Load direcciones success',
-    props<{ direccion: Direccion[] }>()
+    props<{ response: Response }>()
 );
 
 export const LoadDireccionFail = createAction(
@@ -19,33 +20,33 @@ export const LoadDireccionFail = createAction(
 /** UPDATE DIRECCION */
 export const UpdateDireccion = createAction(
     '[Direccion] Update direccion',
-    props<{ direccion: Direccion[] }>()
+    props<{ direccion: Direccion }>()
 );
 
 export const UpdateDireccionSuccess = createAction(
     '[Direccion] Update direccion success',
-    props<{ direccion: Direccion[] }>()
+    props<{ response: any }>()
 );
 
 export const UpdateDireccionFail = createAction(
     '[Direccion] Update direccion fail',
-    props<{ direccion: Direccion[] }>()
+    props<{ error: any }>()
 );
 
 /** ADD DIRECCION */
 export const AddDireccion = createAction(
     '[Direccion] Add direccion',
-    props<{ direccion: Direccion }>()
+    props<{ response: Response }>()
 );
 
 export const AddDireccionSuccess = createAction(
     '[Direccion] Add direccion success',
-    props<{ direccion: Direccion }>()
+    props<{ response: any }>()
 );
 
 export const AddDireccionFail = createAction(
     '[Direccion] Add direccion fail',
-    props<{ direccion: Direccion }>()
+    props<{ error: any }>()
 );
 
 export const DeleteDireccion = createAction(
@@ -55,12 +56,12 @@ export const DeleteDireccion = createAction(
 
 export const DeleteDireccionSuccess = createAction(
     '[Direccion] Delete direccion success',
-    props<{ direccion: Direccion }>()
+    props<{ response: any }>()
 );
 
 export const DeleteDireccionFail = createAction(
     '[Direccion] Delete direccion fail',
-    props<{ direccion: Direccion }>()
+    props<{ error: any }>()
 );
 
 
