@@ -20,7 +20,7 @@ import { NotificacionService } from 'src/app/shared/services/notificacion.servic
 export class ListarDireccionesComponent implements OnInit {
   title:string = 'Direcciones';
 
-  columnas: string[] = [ 'id', 'calleNumero', 'colonia', 'codigoPostal', 'ciudad', 'estado', 'pais', 'acciones'];
+  columnas: string[] = [ 'id', 'alias', 'calleNumero', 'colonia', 'codigoPostal', 'ciudad', 'estado', 'pais', 'acciones'];
 
   DIRECCIONES_DATA: Observable<Response> = new Observable();
 
